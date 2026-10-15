@@ -1,0 +1,10 @@
+{
+  "name": "copy-code-kb",
+  "version": "0.1.0",
+  "description": "Copy a code block of the last reply from the keyboard: /cc [n], or a digit on the band above the prompt.",
+  "author": { "name": "Baptiste Grenier", "url": "https://github.com/gwarf" },
+  "homepage": "https://github.com/gwarf/claude-plugins/tree/main/plugins/copy-code-kb",
+  "repository": "https://github.com/gwarf/claude-plugins",
+  "license": "MIT",
+  "types": "./types/index.d.ts"
+}

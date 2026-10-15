@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "gwarf",
+  "owner": { "name": "Baptiste Grenier", "url": "https://github.com/gwarf" },
+  "metadata": { "description": "Claude Code mods by Baptiste Grenier" },
+  "plugins": [
+    {
+      "name": "copy-code-kb",
+      "source": "./plugins/copy-code-kb",
+      "description": "Copy a code block of the last reply from the keyboard: /cc [n], or a digit on the band above the prompt.",
+      "category": "productivity",
+      "tags": ["mod", "tui", "terminal", "clipboard", "copy", "keyboard"]
+    }
+  ]
+}
