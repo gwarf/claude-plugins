@@ -1,10 +1,11 @@
 // copy-code-kb: copy a fenced block of the last reply from the keyboard, on the main screen.
 // Fence splitting adapted from AH-Merii/claude-plugins copy-code (MIT, see THIRD_PARTY.md).
-import { atom, read, update } from 'claude-code'
+
 import type { EngineInterface, Register, RenderSurface } from 'claude-code'
+import { atom, read, update } from 'claude-code'
 
 import type { Block } from '../types'
-import { blocks as splitBlocks, languageName } from './split'
+import { languageName, blocks as splitBlocks } from './split'
 
 const COMMAND = 'cc'
 // Digit hotkeys reach 1-9; later blocks stay reachable through /cc n.
@@ -104,7 +105,9 @@ export const register: Register = on => {
               onPress={async press => {
                 try {
                   const result = await copy($, block, press.surface)
-                  $.ui.toast(result.isCopied ? `Copied ${describe(block, i + 1, list.length)}` : `Copy failed: ${result.reason}`)
+                  $.ui.toast(
+                    result.isCopied ? `Copied ${describe(block, i + 1, list.length)}` : `Copy failed: ${result.reason}`,
+                  )
                 } catch {
                   $.ui.toast('Copy failed: copy-code-kb hit an error')
                 }

@@ -24,9 +24,12 @@ Requires Claude Code 2.1.287 or newer (function hooks API). Each mod's README ha
 
 ## Develop
 
+One script runs every check, the same locally and in CI:
+
 ```sh
-claude plugin validate plugins/<mod>
-claude plugin test plugins/<mod>
+ci/check.sh all
 ```
+
+`validate` is `claude plugin validate --strict` on the marketplace and each plugin, `lint` is Biome (`biome.json`), `types` is `tsc` against the types Claude Code writes beside a mod it has loaded, `test` is `claude plugin test`. CI runs validate, lint and test on every push and pull request; `types` is local only, because Claude Code writes a mod's types when an interactive session loads it. Fix formatting with `bunx @biomejs/biome check --write plugins`.
 
 MIT, see LICENSE. Third-party notices live beside the mod that carries them.

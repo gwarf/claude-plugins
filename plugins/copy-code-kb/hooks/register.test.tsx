@@ -1,5 +1,5 @@
-import { describe, expect, mock, test } from 'claude-code/testing'
 import type { CommandRunInput, On, TurnCompleteInput } from 'claude-code'
+import { describe, expect, mock, test } from 'claude-code/testing'
 
 import { blocks, languageName } from './split'
 
@@ -172,7 +172,9 @@ describe('wl-copy re-copy', () => {
     await clock.settle()
     await clock.advance(300)
     expect((await answer).text).toBe('Copied block 1/3 (bash, 1 line).')
-    expect(runs).toEqual([{ argv: ['sh', '-c', "exec wl-copy --type 'text/plain;charset=utf-8' >/dev/null 2>&1"], stdin: 'echo one' }])
+    expect(runs).toEqual([
+      { argv: ['sh', '-c', "exec wl-copy --type 'text/plain;charset=utf-8' >/dev/null 2>&1"], stdin: 'echo one' },
+    ])
   })
 
   test('over SSH nothing is spawned', async ($, on) => {
@@ -213,8 +215,8 @@ describe('band', () => {
 
     const ui = await $.ui.mount({ ...BAND, surface: 'terminal' })
     const buttons = await ui.findAll({ type: 'Button' })
-    expect(buttons.map(b => b.props['hotkey'])).toEqual(['1', '2', '3'])
-    expect(buttons.map(b => b.props['label'])).toEqual(['bash 1L', 'python 2L', 'text 1L'])
+    expect(buttons.map(b => b.props.hotkey)).toEqual(['1', '2', '3'])
+    expect(buttons.map(b => b.props.label)).toEqual(['bash 1L', 'python 2L', 'text 1L'])
 
     await ui.press({ key: 'copy:2' })
     expect(copied).toEqual(['print(1)\nprint(2)'])
@@ -229,7 +231,10 @@ describe('band', () => {
     await empty.unmount()
 
     await $.turn.complete(turn(REPLY))
-    for (const props of [{ ...BAND.props, isWorking: true }, { ...BAND.props, hasSurvey: true }]) {
+    for (const props of [
+      { ...BAND.props, isWorking: true },
+      { ...BAND.props, hasSurvey: true },
+    ]) {
       const ui = await $.ui.mount({ ...BAND, props, surface: 'terminal' })
       expect(await ui.find({ type: 'Button' })).toBeUndefined()
       await ui.unmount()
