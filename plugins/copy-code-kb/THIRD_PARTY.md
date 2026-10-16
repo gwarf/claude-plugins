@@ -6,8 +6,6 @@ https://github.com/AH-Merii/claude-plugins (plugins/copy-code). Two parts of its
 - `hooks/split.ts`: the fence splitting and the language aliases (its split.ts and languages.ts).
 - `hooks/register.tsx`: the plain-text re-copy through `wl-copy` after Claude Code's own copy, with its argv, output redirection and timing.
 
-The idea of a copy button on code blocks, the Biome settings and the layout of the checks and CI workflow follow the same repository.
-
 MIT License
 
 Copyright (c) 2026 AH-Merii (AbdulHamid Merii)
