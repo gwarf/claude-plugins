@@ -1,7 +1,10 @@
 # Third-party code
 
-`hooks/split.ts` adapts the fence splitting and language aliases of the copy-code mod in
-https://github.com/AH-Merii/claude-plugins (plugins/copy-code/hooks/split.ts and languages.ts).
+This mod started from the copy-code mod by AH-Merii (AbdulHamid Merii), MIT:
+https://github.com/AH-Merii/claude-plugins (plugins/copy-code). Two parts of its code were adapted:
+
+- `hooks/split.ts`: the fence splitting and the language aliases (its split.ts and languages.ts).
+- `hooks/register.tsx`: the plain-text re-copy through `wl-copy` after Claude Code's own copy, with its argv, output redirection and timing.
 
 MIT License
 

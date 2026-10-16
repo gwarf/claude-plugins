@@ -35,4 +35,6 @@ claude plugin validate .
 claude plugin test .
 ```
 
-`hooks/split.ts` adapts the fence splitting of AH-Merii's copy-code mod (MIT, see THIRD_PARTY.md).
+## Alternatives
+
+On the fullscreen TUI, [copy-code](https://github.com/AH-Merii/claude-plugins/tree/main/plugins/copy-code) by AH-Merii draws a copy button on every block, with hover highlighting, and is the better fit there. This mod exists for the main screen, where that button cannot be pressed. The idea, the fence splitting and the wl-copy re-copy come from it (MIT, see THIRD_PARTY.md).

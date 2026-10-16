@@ -1,5 +1,5 @@
 // copy-code-kb: copy a fenced block of the last reply from the keyboard, on the main screen.
-// Fence splitting adapted from AH-Merii/claude-plugins copy-code (MIT, see THIRD_PARTY.md).
+// Fence splitting and the wl-copy re-copy adapted from AH-Merii/claude-plugins copy-code (MIT, see THIRD_PARTY.md).
 
 import type { EngineInterface, Register, RenderSurface } from 'claude-code'
 import { atom, read, update } from 'claude-code'
