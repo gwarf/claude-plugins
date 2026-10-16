@@ -33,3 +33,7 @@ ci/check.sh all
 `validate` is `claude plugin validate --strict` on the marketplace and each plugin, `lint` is Biome (`biome.json`), `types` is `tsc` against the types Claude Code writes beside a mod it has loaded, `test` is `claude plugin test`. CI runs validate, lint and test on every push and pull request; `types` is local only, because Claude Code writes a mod's types when an interactive session loads it. Fix formatting with `bunx @biomejs/biome check --write plugins`.
 
 MIT, see LICENSE. Third-party notices live beside the mod that carries them.
+
+## Credits
+
+The layout of this repository, the Biome settings and the shape of the checks follow [AH-Merii/claude-plugins](https://github.com/AH-Merii/claude-plugins), whose copy-code mod is also where copy-code-kb started.
