@@ -1,6 +1,6 @@
 # claude-plugins
 
-Claude Code mods by Baptiste Grenier. One marketplace, one folder per mod under `plugins/`; add the marketplace once, then install only the mods you want.
+Claude Code mods by gwarf: a plugin marketplace. One marketplace, one folder per mod under `plugins/`; add it once, then install only the mods you want.
 
 | Mod | What it does |
 |---|---|

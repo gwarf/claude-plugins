@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "gwarf",
   "owner": { "name": "Baptiste Grenier", "url": "https://github.com/gwarf" },
-  "metadata": { "description": "Claude Code mods by Baptiste Grenier" },
+  "metadata": { "description": "Claude Code mods by gwarf: a plugin marketplace" },
   "plugins": [
     {
       "name": "copy-code-kb",
